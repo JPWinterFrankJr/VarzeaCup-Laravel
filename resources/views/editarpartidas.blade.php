@@ -66,6 +66,7 @@
             color: #007bff;
         }
 
+
         @media screen and (max-width: 600px) {
             .partida{
             display: block;
@@ -86,12 +87,25 @@
 <body>
 @include('navbar')
         <?php
+        use Illuminate\Support\Facades\DB;
         use App\Models\Partidas;
+
+        $sql = "SELECT p.data_partida1, p.data_partida2, t1.name AS time1_nome, t2.name AS time2_nome, 
+                p.time1_gols1, p.time2_gols1, p.time1_gols2, p.time2_gols2
+                FROM vc_partidas p
+                INNER JOIN vc_times t1 ON p.time1_id = t1.id
+                INNER JOIN vc_times t2 ON p.time2_id = t2.id";
+                $names = DB::select($sql);
+
+        foreach($names as $name){
+            $time1 = $name->time1_nome;
+            $time2 = $name->time2_nome;
+        }
 
         $results = Partidas::all();
         foreach ($results as $result) {
             echo "<div class='partida'>";
-            echo "<h1 id='nome'>{$result->time1_nome} x {$result->time2_nome}</h1> <br>";
+            echo "<h1 id='nome'>{$time1} x {$time2}</h1> <br>";
             echo "<h2>Partida 1</h2>";
             echo "<div class='info'>";
             echo "<p>{$result->time1_nome} {$result->time1_gols1} X {$result->time2_gols1} {$result->time2_nome}</p>";

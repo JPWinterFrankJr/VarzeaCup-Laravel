@@ -116,6 +116,14 @@ $sql = "SELECT p.data_partida1, p.data_partida2, t1.name AS time1_nome, t2.name 
             // Botão de editar numero de gols
             echo "<a href='/partidas/editarpartidas'>Editar</a>";
             echo "</div>";
+
+            echo "<h2>Resultado Final</h2>";
+            echo "<div class='info'>";
+            // Fazendo a busca do numero de gols por time da partida 2
+            $ResultadoFinaltime1 = $result->time1_gols1 + $result->time1_gols2;
+            $ResultadoFinaltime2 = $result->time2_gols1 + $result->time2_gols2;
+            echo "<p>{$result->time1_nome} {$ResultadoFinaltime1} X {$ResultadoFinaltime2} {$result->time2_nome}</p>";
+            echo "</div>";
             echo "</div>";
 
         }
