@@ -35,10 +35,10 @@ $consulta = DB::table('vc_times')
             ELSE 0 
         END) AS empates
     '))
-    ->leftJoin('vc_partidas', function($join) {
+    ->leftJoin('vc_partidas', function ($join) {
         $join->on('vc_times.id', '=', 'vc_partidas.time1_id')
-             ->orOn('vc_times.id', '=', 'vc_partidas.time2_id');
-    })    ->where(function ($query) {
+            ->orOn('vc_times.id', '=', 'vc_partidas.time2_id');
+    })->where(function ($query) {
         $query->whereNotNull('vc_partidas.time1_gols1')
             ->whereNotNull('vc_partidas.time1_gols2')
             ->orWhereNotNull('vc_partidas.time2_gols1')
@@ -47,7 +47,7 @@ $consulta = DB::table('vc_times')
     ->groupBy('vc_times.id', 'vc_times.name')
     ->orderByDesc('vitorias')
     ->get();
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -71,42 +71,39 @@ $consulta = DB::table('vc_times')
             text-align: center;
         }
     </style>
-    </head>
+    @include('navbar')
 
-    <body>
-        @include('navbar')
+    <h1>Tabela de Classificação</h1>
 
-        <h1>Tabela de Classificação</h1>
+    <table border="1">
+        <tr>
+            <th>Posição</th>
+            <th>Time</th>
+            <th>Gols</th>
+            <th>jogos</th>
+            <th>Vitórias</th>
+            <th>Derrotas</th>
+            <th>Empates</th>
+        </tr>
+        <?php
+        // Executar a consulta SQL
 
-        <table border="1">
-            <tr>
-                <th>Posição</th>
-                <th>Time</th>
-                <th>Gols</th>
-                <th>jogos</th>
-                <th>Vitórias</th>
-                <th>Derrotas</th>
-                <th>Empates</th>
-            </tr>
-            <?php
-            // Executar a consulta SQL
-            
-            $posicao = 1;
-            
-            foreach ($consulta as $result) {
-                echo '<tr>';
-                echo '<td>' . $posicao . '</td>';
-                echo '<td>' . $result->name . '</td>';
-                echo '<td>' . $result->gols . '</td>';
-                echo '<td>' . $result->jogos . '</td>';
-                echo '<td>' . $result->vitorias . '</td>';
-                echo '<td>' . $result->derrotas . '</td>';
-                echo '<td>' . $result->empates . '</td>';
-                echo '</tr>';
-                $posicao++;
-            }
-            ?>
-        </table>
-    </body>
+        $posicao = 1;
+
+        foreach ($consulta as $result) {
+            echo '<tr>';
+            echo '<td>' . $posicao . '</td>';
+            echo '<td>' . $result->name . '</td>';
+            echo '<td>' . $result->gols . '</td>';
+            echo '<td>' . $result->jogos . '</td>';
+            echo '<td>' . $result->vitorias . '</td>';
+            echo '<td>' . $result->derrotas . '</td>';
+            echo '<td>' . $result->empates . '</td>';
+            echo '</tr>';
+            $posicao++;
+        }
+        ?>
+    </table>
+</body>
 
 </html>

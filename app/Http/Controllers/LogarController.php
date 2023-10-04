@@ -15,7 +15,7 @@ class LogarController extends Controller
 
     public function logar(Request $request)
     {
-        // Valide os dados do formulário
+        // Valide os dados do formulário//Alterar para form request
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',

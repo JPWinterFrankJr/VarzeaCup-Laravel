@@ -3,21 +3,37 @@
 namespace App\Http\Controllers;
 use App\Models\Partidas;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class ListarPartidasController extends Controller
 {
     public function view()
-    {
-        return view('partidas');
+    {   
+        
+        $partidasModel = new Partidas();
+        $results = $partidasModel->listarPartidas();
+        
+        foreach ($results as $result) {
+            $result->ResultadoFinaltime1 = $result->time1_gols1 + $result->time1_gols2;
+            $result->ResultadoFinaltime2 = $result->time2_gols1 + $result->time2_gols2;
+        }
+    
+    return view('partidas', compact('result'));
+   
     }
 
     public function viewEditar(Request $request)
     {
+        $partidasModel = new Partidas();
+        $results = $partidasModel->listarPartidas();
+        
+            foreach ($results as $result) {
+            }
 
-      return view('editarpartidas');
+      
+        return view('editarpartidas', compact('result'));
 
     }
+
     public function salvar(Request $request)
     {
         if ($request->has('Salvar')) {

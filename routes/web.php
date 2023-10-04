@@ -33,7 +33,7 @@ Route::get('/classificacao', [ClassificacaoController::class, 'view']);
 
 Route::middleware(['auth'])->group(function () {
     // Todas as rotas dentro deste grupo requerem autenticação
-    Route::get('/usuarios', [UsuarioController::class, 'View']);
+    Route::get('/usuarios', [UsuarioController::class, 'view']);
 
     //PARTIDAS/EDITAR PARTIDAS
     Route::get('/partidas', [ListarPartidasController::class, 'View']);

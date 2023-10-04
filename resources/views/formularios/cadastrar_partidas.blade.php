@@ -142,7 +142,7 @@
 
             $results = Times::all();
             foreach ($results as $result ) {
-            echo '<option value="' . $result['id'] . '">' . $result['name'] . '</option>';
+                echo '<option value="' . $result['id'] . '">' . $result['name'] . '</option>';
             }
             ?>
         </select>
@@ -152,7 +152,7 @@
         <select name="time2_id" id="time2_id">
             <?php
             foreach ($results as $result) {
-              echo '<option value="' . $result['id'] . '">' . $result['name'] . '</option>';
+                echo '<option value="' . $result['id'] . '">' . $result['name'] . '</option>';
             }
             ?>
         </select>
