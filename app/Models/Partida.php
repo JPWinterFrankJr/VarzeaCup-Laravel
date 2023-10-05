@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class Partidas extends Model
+class Partida extends Model
 {
     protected $table = 'vc_partidas'; // Nome da tabela correspondente no banco de dados
     protected $fillable = [

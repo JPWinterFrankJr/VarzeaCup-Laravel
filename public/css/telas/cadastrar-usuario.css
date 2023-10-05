@@ -1,0 +1,61 @@
+.formulario {
+    text-align: center;
+    margin-top: 180px;
+
+  }
+
+  .formulario h1 {
+    font-size: 50px;
+    color: black;
+  }
+
+  .formulario label {
+    font-size: 35px;
+    color: black;
+  }
+
+  .formulario input {
+    height: 30px;
+    width: 300px;
+    background: white;
+    border-radius: 5px;
+    text-align: center;
+    color: black;
+  }
+
+  #cadastrar {
+    background: rgb(2, 162, 255);
+    border-radius: 5px;
+    height: 35px;
+    width: 120px;
+  }
+
+  @media(max-width:575.98px) {
+    .formulario label {
+      font-size: 25px;
+    }
+
+    .formulario h1 {
+      font-size: 30px;
+    }
+
+    .formulario {
+
+      margin-top: 170px;
+    }
+
+    .formulario input {
+      height: 25px;
+      width: 250px;
+      background: white;
+      border-radius: 5px;
+      text-align: center;
+      color: rgb(0, 0, 0);
+    }
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }

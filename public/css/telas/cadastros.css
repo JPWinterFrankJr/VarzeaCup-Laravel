@@ -1,0 +1,30 @@
+.container {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 250px;
+}
+
+.container a {
+    display: inline-block;
+    position: block;
+    width: 350px;
+    height: 40px;
+    margin: 5px;
+    background-color: #333;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+
+}
+
+.container a:hover {
+    color: #333;
+    background: #ddd;
+}
+
+/* Responsividade */
+@media screen and (max-width: 600px) {
+    .container {
+        margin-top: 50px;
+    }
+}

@@ -9,7 +9,7 @@ class CadastrarUsuariosController extends Controller
 {
     public function view()
     {
-        return view('formularios/cadastrar_usuarios');
+        return view('formularios.cadastrar-usuarios');
     }
     
     public function cadastrar(Request $request)
@@ -24,6 +24,6 @@ class CadastrarUsuariosController extends Controller
     // Crie um novo usuário no banco de dados
       User::create($dadosValidados);
     
-    return view('formularios/cadastrar_usuarios');
+    return view('formularios.cadastrar-usuarios');
     }
 }

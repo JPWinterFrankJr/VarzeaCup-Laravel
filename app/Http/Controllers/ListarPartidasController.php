@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Partidas;
+use App\Models\Partida;
 use Illuminate\Http\Request;
 
 class ListarPartidasController extends Controller
@@ -9,7 +9,7 @@ class ListarPartidasController extends Controller
     public function view()
     {   
         
-        $partidasModel = new Partidas();
+        $partidasModel = new Partida();
         $results = $partidasModel->listarPartidas();
         
         foreach ($results as $result) {
@@ -23,21 +23,21 @@ class ListarPartidasController extends Controller
 
     public function viewEditar(Request $request)
     {
-        $partidasModel = new Partidas();
+        $partidasModel = new Partida();
         $results = $partidasModel->listarPartidas();
         
             foreach ($results as $result) {
             }
 
       
-        return view('editarpartidas', compact('result'));
+        return view('editar-partidas', compact('result'));
 
     }
 
     public function salvar(Request $request)
     {
         if ($request->has('Salvar')) {
-            $partidas = Partidas::find($request->input('partida_id'));
+            $partidas = Partida::find($request->input('partida_id'));
     
             if ($partidas) {
                 $partidas->update([
@@ -47,7 +47,7 @@ class ListarPartidasController extends Controller
                     'time2_gols2' => $request->input('time2_gols2'),
                 ]);
     
-                return redirect()->route('ViewEditarPartidas')
+                return redirect()->route('viewEditarPartidas')
                     ->with('success', 'Gols da Partida atualizados com sucesso.');
             } else {
                 return redirect()->back()->with('error', 'Partida não encontrada.');

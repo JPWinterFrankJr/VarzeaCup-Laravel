@@ -1,15 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Partidas;
+use App\Models\Time;
+use App\Models\Partida;
 use Illuminate\Http\Request;
 
 class CadastrarPartidasController extends Controller
 {
     public function view()
     {
-        return view('formularios/cadastrar_partidas');
+        $results = Time::all();
+
+        return view('formularios.cadastrar-partidas',compact('results'));
     }
 
     public function cadastrar(Request $request)
@@ -28,8 +30,8 @@ class CadastrarPartidasController extends Controller
         'time2_id'=> 'int'
     ]);
     // Crie um novo usuário no banco de dados
-      Partidas::create($dadosValidados);
+      Partida::create($dadosValidados);
     
-    return view('formularios/cadastrar_partidas');
+    return view('formularios.cadastrar-partidas');
     }
 }

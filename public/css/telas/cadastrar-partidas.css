@@ -1,0 +1,108 @@
+
+.container {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 250px;
+}
+
+.container a {
+    display: inline-block;
+    position: block;
+    width: 350px;
+    height: 50px;
+    margin: 5px;
+    background-color: #333;
+    text-decoration: none;
+    color: black;
+}
+
+.container a:hover {
+    color: #333;
+    background: #ddd;
+}
+
+/* Responsividade */
+@media screen and (max-width: 600px) {
+
+    .container {
+        margin-top: 50px;
+    }
+}
+
+.formulario {
+    text-align: center;
+    margin-top: 40px;
+    color: black;
+}
+
+.formulario select {
+    color: black;
+}
+
+.formulario h1 {
+    font-size: 50px;
+    color: black;
+}
+
+.formulario label {
+    font-size: 30px;
+    color: black;
+}
+
+.formulario input {
+    height: 40px;
+    width: 100px;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    text-align: center;
+    color: black;
+}
+
+#cadastrar {
+    background: rgb(2, 162, 255);
+    border-radius: 5px;
+    height: 35px;
+    width: 120px;
+}
+
+#cadastrar:hover {
+    background: rgb(221, 134, 134);
+    border-radius: 5px;
+    height: 35px;
+    width: 120px;
+}
+
+#time1 {
+    height: 30px;
+    width: 120px;
+}
+
+#time2 {
+    height: 30px;
+    width: 120px;
+    
+}
+
+@media(max-width:575.98px) {
+    .formulario label {
+        font-size: 25px;
+    }
+
+    .formulario h1 {
+        font-size: 30px;
+    }
+
+    .formulario {
+
+        margin-top: 50px;
+    }
+
+    .formulario input {
+        height: 25px;
+        width: 80px;
+        background: white;
+        border-radius: 5px;
+        text-align: center;
+        color: black;
+    }
+}

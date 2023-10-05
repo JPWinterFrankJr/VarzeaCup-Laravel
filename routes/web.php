@@ -23,35 +23,35 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', [IndexController::class, 'view']);
+Route::get('', [IndexController::class, 'view']);
 //ROTAS LOGAR
-Route::match(['get', 'post'], '/logar', [LogarController::class, 'view'])->name('logar');
-Route::post('/logar/entrar', [LogarController::class, 'logar'])->name('Entrar');
-Route::get('/sair', [LogarController::class, 'logout'])->name('sair');
+Route::match(['get', 'post'], 'logar', [LogarController::class, 'view'])->name('logar');
+Route::post('logar/entrar', [LogarController::class, 'logar'])->name('entrar');
+Route::get('sair', [LogarController::class, 'logout'])->name('sair');
 
-Route::get('/classificacao', [ClassificacaoController::class, 'view']);
+Route::get('classificacao', [ClassificacaoController::class, 'view']);
 
 Route::middleware(['auth'])->group(function () {
     // Todas as rotas dentro deste grupo requerem autenticação
-    Route::get('/usuarios', [UsuarioController::class, 'view']);
+    Route::get('usuarios', [UsuarioController::class, 'view']);
 
     //PARTIDAS/EDITAR PARTIDAS
-    Route::get('/partidas', [ListarPartidasController::class, 'View']);
-    Route::match(['get', 'post'], '/partidas/editarpartidas', [ListarPartidasController::class, 'ViewEditar'])->name('ViewEditarPartidas');
-    Route::post('/partidas/editarpartidas/salvar-partida', [ListarPartidasController::class, 'salvar'])->name('salvar-partida');
+    Route::get('partidas', [ListarPartidasController::class, 'View']);
+    Route::match(['get', 'post'], 'partidas/editar-partidas', [ListarPartidasController::class, 'ViewEditar'])->name('viewEditarPartidas');
+    Route::post('partidas/editar-partidas/salvar-partida', [ListarPartidasController::class, 'salvar'])->name('salvarPartida');
 
     //ROTAS CADASTROS
-    Route::get('/cadastros', [CadastroController::class, 'view'])->name('Cadastro');
+    Route::get('cadastros', [CadastroController::class, 'view'])->name('cadastro');
 
-    Route::get('/cadastros/cadastrar_partidas', [CadastrarPartidasController::class, 'view']);
-    Route::post('/cadastros/cadastrar_partidas', [CadastrarPartidasController::class, 'cadastrar'])->name('CadastroPartida.cadastrar');
-
-
-    Route::get('/cadastros/cadastrar_times', [CadastrarTimesController::class, 'view'])->name('CadastroTime.view');
-    Route::post('/cadastros/cadastrar_times', [CadastrarTimesController::class, 'cadastrar'])->name('CadastroTime.cadastrar');
+    Route::get('cadastros/cadastrar-partidas', [CadastrarPartidasController::class, 'view']);
+    Route::post('cadastros/cadastrar-partidas', [CadastrarPartidasController::class, 'cadastrar'])->name('cadastroPartida.cadastrar');
 
 
-    Route::get('/cadastros/cadastrar_usuarios', [CadastrarUsuariosController::class, 'view'])->name('CadastroUsuario.view');
-    Route::post('/cadastros/cadastrar_usuarios', [CadastrarUsuariosController::class, 'cadastrar'])->name('CadastroUsuario.cadastrar');
+    Route::get('cadastros/cadastrar-times', [CadastrarTimesController::class, 'view'])->name('cadastroTime.view');
+    Route::post('cadastros/cadastrar-times', [CadastrarTimesController::class, 'cadastrar'])->name('cadastroTime.cadastrar');
+
+
+    Route::get('cadastros/cadastrar-usuarios', [CadastrarUsuariosController::class, 'view'])->name('cadastroUsuario.view');
+    Route::post('cadastros/cadastrar-usuarios', [CadastrarUsuariosController::class, 'cadastrar'])->name('cadastroUsuario.cadastrar');
 });
 

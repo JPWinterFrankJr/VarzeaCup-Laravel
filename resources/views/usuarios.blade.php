@@ -1,47 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('navbar')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listar Usuários</title>
-    <link rel="stylesheet" href="css/telas/usuarios.css">
-</head>
+@push('css')
+<link rel="stylesheet" href="css/telas/usuarios.css">
+@endpush
 
-<body>
-    @include('navbar')
+@section('content')
+<div class="container">
+    <h1>Listagem de Usuários</h1>
 
-
-    <div class="container">
-        <h1>Listagem de Usuários</h1>
-
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Email</th>
-            </tr>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+        </tr>
 
 
-            @if ($results->count() > 0)
-            @foreach ($results as $result)
+        @if ($results->count() > 0)
+        @foreach ($results as $result)
 
-            <tr>
-                <td> {{$result->id}} </td>
-                <td> {{$result->name}} </td>
-                <td> {{$result->email}} </td>
-            </tr>
-            @endforeach
+        <tr>
+            <td> {{$result->id}} </td>
+            <td> {{$result->name}} </td>
+            <td> {{$result->email}} </td>
+        </tr>
+        @endforeach
 
-            @else
-            <tr>
-                <td colspan='3'>Nenhum usuário encontrado</td>
-            </tr>
+        @else
+        <tr>
+            <td colspan='3'>Nenhum usuário encontrado</td>
+        </tr>
 
-            @endif
-        </table>
+        @endif
+    </table>
 
-    </div>
+</div>
+@endsection
+
+
+
+
+
+
+
+    
 </body>
 
 </html>
