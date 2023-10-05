@@ -36,14 +36,3 @@
 
 </div>
 @endsection
-
-
-
-
-
-
-
-    
-</body>
-
-</html>
