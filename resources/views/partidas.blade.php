@@ -3,6 +3,8 @@
 <link rel="stylesheet" href="/css/telas/tela-partidas.css">
 
 @section('content')
+@foreach ($results as $result)
+    
     <div class='partida'>
         <h1 id='nome'>{{ $result->time1_nome }} x {{ $result->time2_nome }}</h1> <br>
         <h2>Partida 1</h2>
@@ -32,5 +34,6 @@
         </div>
     </div>
 
-    </div>
+    </div> 
+@endforeach    
 @endsection

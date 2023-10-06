@@ -10,8 +10,6 @@ class UsuarioController extends Controller
     {
         $results = User::all();
         
-        //return view('classificacao', ['results'=>$results]);
-
         return view('usuarios', compact('results'));
     }
 

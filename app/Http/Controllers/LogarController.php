@@ -13,13 +13,7 @@ class LogarController extends Controller
     }
 
     public function logar(Request $request)
-    {
-        // Valide os dados do formulário//Alterar para form request
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-
+    {    
         // Tente autenticar o usuário
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             // A autenticação foi bem-sucedida

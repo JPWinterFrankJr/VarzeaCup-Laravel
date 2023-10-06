@@ -17,7 +17,7 @@ class ListarPartidasController extends Controller
             $result->ResultadoFinaltime2 = $result->time2_gols1 + $result->time2_gols2;
         }
     
-    return view('partidas', compact('result'));
+    return view('partidas', compact("result","results"));
    
     }
 
@@ -25,11 +25,6 @@ class ListarPartidasController extends Controller
     {
         $partidasModel = new Partida();
         $results = $partidasModel->listarPartidas();
-        
-            foreach ($results as $result) {
-            }
-
-      
         return view('editar-partidas', compact('result'));
 
     }

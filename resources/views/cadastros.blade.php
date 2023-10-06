@@ -4,15 +4,15 @@
 @section('content')
     <div class="container">
         <div id="times">
-            <a href="cadastros.cadastrar-times"> Cadastrar Times </a>
+            <a href="cadastros/cadastrar-times"> Cadastrar Times </a>
         </div>
 
         <div id="partidas">
-            <a href="cadastros.cadastrar-partidas"> Cadastrar Partidas </a>
+            <a href="cadastros/cadastrar-partidas"> Cadastrar Partidas </a>
         </div>
 
         <div id="usuarios">
-            <a href="cadastros.cadastrar-usuarios"> Cadastrar Usuarios </a>
+            <a href="cadastros/cadastrar-usuarios"> Cadastrar Usuarios </a>
         </div>
     </div>
 @endsection

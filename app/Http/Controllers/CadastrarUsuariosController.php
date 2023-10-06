@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CadastrarUsuariosPostRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -12,18 +13,13 @@ class CadastrarUsuariosController extends Controller
         return view('formularios.cadastrar-usuarios');
     }
     
-    public function cadastrar(Request $request)
-    {
-        // Valide os dados do formulário
-        $dadosValidados = $request->validate([
-        'name'=> 'string',
-        'email'=> 'string',
-        'password'=> 'string'
-    ]);
+    public function cadastrar(CadastrarUsuariosPostRequest $request)
+    {   
+      
+        // Os valores dentro da request já estão validados nesse ponto
+        $validaDados= array_merge($request->validated(), ['role' => 'user']);
+        User::create($validaDados);
 
-    // Crie um novo usuário no banco de dados
-      User::create($dadosValidados);
-    
-    return view('formularios.cadastrar-usuarios');
+     return view('formularios.cadastrar-usuarios');
     }
 }
