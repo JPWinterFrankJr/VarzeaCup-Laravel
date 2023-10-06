@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="/css/telas/editar-partidas.css">
 
 @section('content')
+@foreach ($results as $result)
     <div class='partida'>
         <h1 id='nome'>{{ $result->time1_nome }} x {{ $result->time2_nome }}</h1> <br>
         <h2>Partida 1</h2>
@@ -28,13 +29,14 @@
             {{ $result->time1_nome }} {{ $result->time1_gols2 }}
             <input type='number' name='time1_gols2' value='{{ $result->time1_gols2 }}'>
             X
-            {{ $result->time2_gols2 }} {{ $result->time2_nome }}
             <input type='number' name='time2_gols2' value='{{ $result->time2_gols2 }}'>
+            {{ $result->time2_gols2 }} {{ $result->time2_nome }}
 
-            <input type='submit' name='Salvar' value='Salvar'>
+            <input type='submit' id="salvar" name='Salvar' value='Salvar'>
 
             </form>
         </div>
 
     </div>
+@endforeach    
 @endsection

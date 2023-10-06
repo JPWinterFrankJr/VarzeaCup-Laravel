@@ -56,8 +56,9 @@ h1 {
     font-weight: bold;
     color: #007bff;
 }
-
-
+#salvar{
+    margin-left: 10px;
+}
 @media screen and (max-width: 600px) {
     .partida {
         display: block;
