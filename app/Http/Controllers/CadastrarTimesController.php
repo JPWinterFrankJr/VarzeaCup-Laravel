@@ -15,12 +15,12 @@ class CadastrarTimesController extends Controller
 
     public function cadastrar(CadastrarTimesPostRequest $request)
     {
+    $dados = $request->all();
         // Os valores dentro da request já estão validados nesse ponto
-        $validaDados= array_merge($request->validated(), ['role' => 'user']);
-        Time::create($validaDados);
+       
 
     // Crie um novo time no banco de dados
-    Time::create($validaDados);
+    Time::create($dados);
     
     return view('formularios.cadastrar-times');
     }
