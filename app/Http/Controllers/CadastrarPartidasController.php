@@ -20,7 +20,7 @@ class CadastrarPartidasController extends Controller
     {
         // Os valores dentro da request já estão validados nesse ponto
         $validaDados = array_merge($request->validated(), ['role' => 'partida']);
-        // Crie um novo usuário no banco de dados
+        // Crie uma nova Partida no banco de dados
         Partida::create($validaDados);
         $results = Time::all();
         return view('formularios.cadastrar-partidas', compact('results'));

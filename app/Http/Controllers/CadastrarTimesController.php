@@ -19,7 +19,7 @@ class CadastrarTimesController extends Controller
         $validaDados= array_merge($request->validated(), ['role' => 'time']);
         Time::create($validaDados);
 
-    // Crie um novo usuário no banco de dados
+    // Crie um novo time no banco de dados
     Time::create($validaDados);
     
     return view('formularios.cadastrar-times');
