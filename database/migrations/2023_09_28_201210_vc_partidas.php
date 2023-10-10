@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('vc_partidas', function (Blueprint $table) {
             $table->id();
-            $table->date('data_partida1');
-            $table->date('data_partida2');
+            $table->text('data_partida1');
+            $table->text('data_partida2');
             $table->integer('time1_gols1');
             $table->integer('time2_gols1');
             $table->integer('time1_gols2');

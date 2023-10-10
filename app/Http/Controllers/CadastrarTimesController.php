@@ -15,9 +15,9 @@ class CadastrarTimesController extends Controller
 
     public function cadastrar(CadastrarTimesPostRequest $request)
     {
+    // Os valores dentro da request já estão validados nesse ponto
     $dados = $request->all();
-        // Os valores dentro da request já estão validados nesse ponto
-       
+
 
     // Crie um novo time no banco de dados
     Time::create($dados);

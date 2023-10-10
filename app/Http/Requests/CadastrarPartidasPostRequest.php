@@ -22,8 +22,8 @@ class CadastrarPartidasPostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'data_partida1'=> 'date',
-            'data_partida2'=> 'date',
+            'data_partida1'=> 'string',
+            'data_partida2'=> 'string',
             'time1_gols1'=> 'int',
             'time2_gols1'=> 'int',
             'time1_gols2'=> 'int',
