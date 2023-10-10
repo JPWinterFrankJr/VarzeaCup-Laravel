@@ -34,8 +34,7 @@ class Partida extends Model
     $results = DB::select($sql);
 
     return $results;
-    }
-
+    } 
 
 
 }

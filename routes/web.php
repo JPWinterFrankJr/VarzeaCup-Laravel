@@ -31,14 +31,18 @@ Route::get('sair', [LogarController::class, 'logout'])->name('sair');
 
 Route::get('classificacao', [ClassificacaoController::class, 'view']);
 
+
+
+
 Route::middleware(['auth'])->group(function () {
     // Todas as rotas dentro deste grupo requerem autenticação
     Route::get('usuarios', [UsuarioController::class, 'view']);
 
     //PARTIDAS/EDITAR PARTIDAS
-    Route::get('partidas', [ListarPartidasController::class, 'View']);
+    Route::get('partidas', [ListarPartidasController::class, 'View']) ->name('partida');
     Route::match(['get', 'post'], 'partidas/editar-partidas', [ListarPartidasController::class, 'ViewEditar'])->name('viewEditarPartidas');
     Route::post('partidas/editar-partidas/salvar-partida', [ListarPartidasController::class, 'salvar'])->name('salvarPartida');
+    Route::match(['get', 'post'],'partidas/deletar', [ListarPartidasController::class, 'destroy'])->name('editarpartida.deletarPartida');
 
     //ROTAS CADASTROS
     Route::get('cadastros', [CadastroController::class, 'view'])->name('cadastro');
@@ -49,7 +53,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('cadastros/cadastrar-times', [CadastrarTimesController::class, 'view'])->name('cadastroTime.view');
     Route::post('cadastros/cadastrar-times', [CadastrarTimesController::class, 'cadastrar'])->name('cadastroTime.cadastrar');
-
 
     Route::get('cadastros/cadastrar-usuarios', [CadastrarUsuariosController::class, 'view'])->name('cadastroUsuario.view');
     Route::post('cadastros/cadastrar-usuarios', [CadastrarUsuariosController::class, 'cadastrar'])->name('cadastroUsuario.cadastrar');
