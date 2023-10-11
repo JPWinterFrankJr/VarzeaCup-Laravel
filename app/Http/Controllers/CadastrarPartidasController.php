@@ -18,10 +18,8 @@ class CadastrarPartidasController extends Controller
 
     public function create(CadastrarPartidasPostRequest $request)
     {
-        // Os valores dentro da request já estão validados nesse ponto
-        $dados = $request->all();
         // Crie uma nova Partida no banco de dados
-        Partida::create($dados );
+        Partida::create($request->all());
         $results = Time::all();
         return view('formularios.cadastrar-partidas', compact('results'));
     }

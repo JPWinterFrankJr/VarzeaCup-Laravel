@@ -22,10 +22,8 @@ class UsuariosPostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id'=>'int',
-            'name'=>'string',
-            'email'=>'string',
-            'password'=>'string',
+            'id'=>'required',
+            'name'=>'required'
         ];
     }
 }

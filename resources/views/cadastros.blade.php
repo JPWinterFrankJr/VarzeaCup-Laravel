@@ -12,7 +12,7 @@
         </div>
 
         <div id="usuarios">
-            <a href="cadastros/cadastrar-usuarios"> Cadastrar Usuarios </a>
+            <a href="{{route('cadastroUsuario.view')}}"> Cadastrar Usuarios </a>
         </div>
     </div>
 @endsection

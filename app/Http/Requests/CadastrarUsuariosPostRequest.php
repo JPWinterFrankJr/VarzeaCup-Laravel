@@ -23,9 +23,9 @@ class CadastrarUsuariosPostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=> 'string',
-            'email'=> 'string',
-            'password'=> 'string'
+            'name'=> 'required',
+            'email'=> 'required',
+            'password'=> 'required'
         ];
     }
     

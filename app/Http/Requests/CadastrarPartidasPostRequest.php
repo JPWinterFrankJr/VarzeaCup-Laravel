@@ -22,14 +22,13 @@ class CadastrarPartidasPostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'data_partida1'=> 'string',
-            'data_partida2'=> 'string',
-            'time1_gols1'=> 'int',
-            'time2_gols1'=> 'int',
-            'time1_gols2'=> 'int',
-            'time2_gols2'=> 'int',
-            'time1_id'=> 'int',
-            'time2_id'=> 'int',
+            'id'=>'required',
+            'time1_gols1'=> 'required',
+            'time2_gols1'=> 'required',
+            'time1_gols2'=> 'required',
+            'time2_gols2'=> 'required',
+            'time1_id'=> 'required',
+            'time2_id'=> 'required',
         ];
     }
 }

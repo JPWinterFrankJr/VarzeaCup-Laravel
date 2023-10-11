@@ -60,7 +60,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('cadastros/cadastrar-times', [CadastrarTimesController::class, 'show'])->name('cadastroTime.view');
     Route::post('cadastros/cadastrar-times', [CadastrarTimesController::class, 'create'])->name('cadastroTime.cadastrar');
 
-    Route::get('cadastros/cadastrar-usuarios', [CadastrarUsuariosController::class, 'create'])->name('cadastroUsuario.view');
+    Route::get('cadastros/usuarios', [CadastrarUsuariosController::class, 'show'])->name('cadastroUsuario.view');
     Route::post('cadastros/cadastrar-usuarios', [CadastrarUsuariosController::class, 'create'])->name('cadastroUsuario.cadastrar');
 });
 

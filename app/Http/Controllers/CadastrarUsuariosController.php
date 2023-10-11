@@ -17,8 +17,7 @@ class CadastrarUsuariosController extends Controller
     {   
       
         // Os valores dentro da request já estão validados nesse ponto
-        $dados = $request->all();        //CRrie um novo usuario dentro da Banco
-        User::create($dados);
+        User::create($request->all());
 
      return view('formularios.cadastrar-usuarios');
     }
