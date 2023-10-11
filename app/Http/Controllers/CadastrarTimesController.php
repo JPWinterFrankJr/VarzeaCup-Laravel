@@ -13,7 +13,7 @@ class CadastrarTimesController extends Controller
         return view('formularios.cadastrar-times');
     }
 
-    public function creata(CadastrarTimesPostRequest $request)
+    public function create(CadastrarTimesPostRequest $request)
     {
     // Os valores dentro da request já estão validados nesse ponto
     $dados = $request->all();

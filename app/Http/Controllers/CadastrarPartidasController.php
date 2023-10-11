@@ -16,7 +16,7 @@ class CadastrarPartidasController extends Controller
         return view('formularios.cadastrar-partidas', compact('results'));
     }
 
-    public function creata(CadastrarPartidasPostRequest $request)
+    public function create(CadastrarPartidasPostRequest $request)
     {
         // Os valores dentro da request já estão validados nesse ponto
         $dados = $request->all();
