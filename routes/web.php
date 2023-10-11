@@ -54,13 +54,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('cadastros', [CadastroController::class, 'show'])->name('cadastro');
 
     Route::get('cadastros/cadastrar-partidas', [CadastrarPartidasController::class, 'show']);
-    Route::post('cadastros/cadastrar-partidas', [CadastrarPartidasController::class, 'cadastrar'])->name('cadastroPartida.cadastrar');
+    Route::post('cadastros/cadastrar-partidas', [CadastrarPartidasController::class, 'creata'])->name('cadastroPartida.cadastrar');
 
 
     Route::get('cadastros/cadastrar-times', [CadastrarTimesController::class, 'show'])->name('cadastroTime.view');
-    Route::post('cadastros/cadastrar-times', [CadastrarTimesController::class, 'cadastrar'])->name('cadastroTime.cadastrar');
+    Route::post('cadastros/cadastrar-times', [CadastrarTimesController::class, 'creata'])->name('cadastroTime.cadastrar');
 
-    Route::get('cadastros/cadastrar-usuarios', [CadastrarUsuariosController::class, 'show'])->name('cadastroUsuario.view');
-    Route::post('cadastros/cadastrar-usuarios', [CadastrarUsuariosController::class, 'cadastrar'])->name('cadastroUsuario.cadastrar');
+    Route::get('cadastros/cadastrar-usuarios', [CadastrarUsuariosController::class, 'create'])->name('cadastroUsuario.view');
+    Route::post('cadastros/cadastrar-usuarios', [CadastrarUsuariosController::class, 'create'])->name('cadastroUsuario.cadastrar');
 });
 

@@ -1,8 +1,7 @@
 @extends('navbar')
 @push('css')
-<link rel="stylesheet" href="css/telas/usuarios.css">
+<link rel="stylesheet" href="../css/telas/usuarios.css">
 @endpush
-
 @section('content')
 <div class="container">
     <h1>Listagem de Usuários</h1>

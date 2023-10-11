@@ -14,23 +14,23 @@
                 <input type='hidden' name='partida_id' value='{{ $result->id }}'>
 
 
-                {{ $result->time1_nome }} {{ $result->time1_gols1 }}
+                {{ $result->time1_nome }} 
                 <input type='number' name='time1_gols1' value='{{ $result->time1_gols1 }}'>
                 X
                 <input type='number' name='time2_gols1' value='{{ $result->time2_gols1 }}'>
-                {{ $result->time2_gols1 }} {{ $result->time2_nome }}
+               {{ $result->time2_nome }}
 
         </div>
 
 
         <h2>Partida 2</h2>
         <div class='info'>
-            <input type='hidden' name='partida_id' value='{{ $result->id }}'>
-            {{ $result->time1_nome }} {{ $result->time1_gols2 }}
+            <input type='hidden'  name='partida_id' value='{{ $result->id }}'>
+            {{ $result->time1_nome }} 
             <input type='number' name='time1_gols2' value='{{ $result->time1_gols2 }}'>
             X
             <input type='number' name='time2_gols2' value='{{ $result->time2_gols2 }}'>
-            {{ $result->time2_gols2 }} {{ $result->time2_nome }}
+            {{ $result->time2_nome }}
 
             <input type='submit' id="salvar" name='Salvar' value='Salvar'>
 

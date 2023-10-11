@@ -13,7 +13,7 @@ class CadastrarUsuariosController extends Controller
         return view('formularios.cadastrar-usuarios');
     }
     
-    public function cadastrar(CadastrarUsuariosPostRequest $request)
+    public function creata(CadastrarUsuariosPostRequest $request)
     {   
       
         // Os valores dentro da request já estão validados nesse ponto
