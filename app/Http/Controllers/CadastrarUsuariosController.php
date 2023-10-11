@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class CadastrarUsuariosController extends Controller
 {
-    public function view()
+    public function show()
     {
         return view('formularios.cadastrar-usuarios');
     }

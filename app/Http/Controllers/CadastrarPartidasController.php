@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class CadastrarPartidasController extends Controller
 {
-    public function view()
+    public function show()
     {
         $results = Time::all();
 

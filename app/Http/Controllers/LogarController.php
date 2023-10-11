@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class LogarController extends Controller
 {
-    public function view()
+    public function show()
     {
         return view('logar');
     }

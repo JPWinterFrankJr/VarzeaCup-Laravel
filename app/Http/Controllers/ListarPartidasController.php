@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class ListarPartidasController extends Controller
 {
-    public function view()
+    public function show()
     {
         
         $partidasModel = new Partida();
@@ -43,7 +43,6 @@ class ListarPartidasController extends Controller
     {
         if ($request->has('Salvar')) {
             $partidas = Partida::find($request->input('partida_id'));
-            dd($partidas);
             if ($partidas == True) {
                 $partidas->update($request->all());
                 return redirect()->route('viewEditarPartidas')

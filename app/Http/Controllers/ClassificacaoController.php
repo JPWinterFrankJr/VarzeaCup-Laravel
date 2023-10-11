@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ClassificacaoController extends Controller
 {
-    public function view()
+    public function show()
     { 
         $partidasModel = new Time();
         $consulta = $partidasModel->classificacao();
