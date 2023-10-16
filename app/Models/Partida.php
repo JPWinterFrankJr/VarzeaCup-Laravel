@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Query\JoinClause;
 use Illuminate\Support\Facades\DB;
 
 class Partida extends Model
@@ -25,13 +26,14 @@ class Partida extends Model
     //Função para listar partidas
     public function listarPartidas(){
     
-     $sql = "SELECT p.id,p.data_partida1, p.data_partida2, t1.name AS time1_nome, t2.name AS time2_nome, 
-        p.time1_gols1, p.time2_gols1, p.time1_gols2, p.time2_gols2
-        FROM vc_partidas p
-        INNER JOIN vc_times t1 ON p.time1_id = t1.id
-        INNER JOIN vc_times t2 ON p.time2_id = t2.id";
-    
-    $results = DB::select($sql);
+        $results = DB::table('vc_partidas')
+        ->select('vc_partidas.id','t1.name as time1_nome', 't2.name as time2_nome', 
+        'time1_gols1', 'time2_gols1', 'time1_gols2', 'time2_gols2')
+            ->join('vc_times as t1','vc_partidas.time1_id', '=', 't1.id')
+            ->join('vc_times as t2', 'vc_partidas.time2_id', '=', 't2.id')
+            ->get();
+        
+    //$results = DB::select($partidas);
 
     return $results;
     } 
