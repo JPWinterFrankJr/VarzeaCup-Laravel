@@ -22,7 +22,6 @@ class CadastrarPartidasPostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id'=>'required',
             'time1_gols1'=> 'required',
             'time2_gols1'=> 'required',
             'time1_gols2'=> 'required',
