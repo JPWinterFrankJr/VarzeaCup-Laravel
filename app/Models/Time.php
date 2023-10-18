@@ -59,6 +59,6 @@ class Time extends Model
             ->get();
       
     
-    return $consulta;
+        return $consulta;
     }
 }

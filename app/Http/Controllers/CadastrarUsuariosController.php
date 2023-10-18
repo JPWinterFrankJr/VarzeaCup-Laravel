@@ -19,6 +19,6 @@ class CadastrarUsuariosController extends Controller
         // Os valores dentro da request já estão validados nesse ponto
         User::create($request->all());
 
-     return view('formularios.cadastrar-usuarios');
+        return view('formularios.cadastrar-usuarios');
     }
 }
