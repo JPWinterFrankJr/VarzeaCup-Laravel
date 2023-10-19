@@ -9,7 +9,6 @@
             <input type="text" name="name" id="name" placeholder="Digite o nome do time">
             <br><br>
             <input type="submit" name="submit" id="submit" value="Cadastrar">
-
         </form>
     </div>
 @endsection

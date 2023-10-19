@@ -35,8 +35,7 @@ class ListarPartidasController extends Controller
     public function destroy(ExcluirPartidasPostRequest $request)
     {
         Partida::find($request->id)->delete();
-        return redirect()->route('partida')
-        ->with('success', 'Gols da Partida atualizados com sucesso.');
+        return redirect()->route('partida');
     }    
 
     public function salvar(ListarPartidasPostRequest $request)

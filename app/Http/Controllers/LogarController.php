@@ -20,6 +20,7 @@ class LogarController extends Controller
             return redirect()->intended('cadastros'); // Redirecionar para a página de destino
         } else {
             // A autenticação falhou
+            //ARRUMAR, MOSTRAR MENSAGEM DE NÃO LOGADO COM SUCESSO
             return back()->withInput()->withErrors(['email' => 'Credenciais inválidas']);
         }
     }

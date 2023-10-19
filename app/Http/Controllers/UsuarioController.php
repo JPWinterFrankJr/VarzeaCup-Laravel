@@ -23,10 +23,9 @@ class UsuarioController extends Controller
     }
 
     public function destroy(UsuariosPostRequest $request)
-    {
+    {           
         User::find($request->id)->delete();
-        return redirect()->route('usuarios')
-        ->with('success', 'usuario deletado com sucesso.');
+        return redirect()->route('usuarios');
     }
 
     public function update(UsuariosPostRequest $request)

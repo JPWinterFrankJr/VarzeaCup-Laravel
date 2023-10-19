@@ -4,6 +4,11 @@
 
 @section('content')
     <div class="container">
+        @if($errors->any())
+            @foreach ($errors->all() as $error)
+                <p>{{$error}}</p>
+            @endforeach
+        @endif
 
         <form action="{{ route('entrar') }}" method="post" class="formulario">
             @csrf
@@ -20,6 +25,5 @@
                 <input type="submit" id="entrar" value="Entrar">
             </div>
         </form>
-
     </div>
 @endsection
