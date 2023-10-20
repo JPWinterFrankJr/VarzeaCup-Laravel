@@ -38,4 +38,12 @@ class LogarPostRequest extends FormRequest
  
     return redirect('/logar');
     }
+    
+    /*public function messages()
+    {
+        return [
+        'email.required'=>'O campo E-mail é obrigatório',
+        'password.required'=>'O campo Senha é obrigatório'
+        ];
+    }*/
 }
