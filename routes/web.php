@@ -53,7 +53,7 @@ Route::middleware(['auth'])->group(function () {
     //ROTAS CADASTROS
     Route::get('cadastros', [CadastroController::class, 'show'])->name('cadastro');
 
-    Route::get('cadastros/cadastrar-partidas', [CadastrarPartidasController::class, 'show']);
+    Route::get('cadastros/cadastrar-partidas', [CadastrarPartidasController::class, 'show'])->name('cadastroPartida.view');
     Route::post('cadastros/cadastrar-partidas', [CadastrarPartidasController::class, 'create'])->name('cadastroPartida.cadastrar');
 
 

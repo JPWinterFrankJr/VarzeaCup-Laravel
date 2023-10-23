@@ -2,6 +2,9 @@
 @stack('css')
 <link rel="stylesheet" href="/css/telas/cadastrar-times.css">
 @section('content')
+@if( session('success'))
+    <p>{{ session('success')}}</p>
+@endif
     <div class="container">
         <form action="{{ route('cadastroTime.cadastrar') }}" method="POST" class="formulario">
             @csrf

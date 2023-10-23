@@ -3,6 +3,9 @@
 <link rel="stylesheet" href="/css/telas/cadastrar-partidas.css">
 
 @section('content')
+@if ( session('success'))
+    <p>{{ session('success')}}</p>
+@endif
     <form action="{{ route('cadastroPartida.cadastrar') }}" method="POST" class="formulario">
         @csrf
         <h1>Cadastrar partidas</h1>

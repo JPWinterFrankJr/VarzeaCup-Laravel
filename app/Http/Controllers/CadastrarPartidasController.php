@@ -21,6 +21,7 @@ class CadastrarPartidasController extends Controller
         // Crie uma nova Partida no banco de dados
         Partida::create($request->all());
         $results = Time::all();
-        return view('formularios.cadastrar-partidas', compact('results'));
+        return redirect()->route('cadastroPartida.view', compact('results'))
+            ->with('success', 'Cadastro de partida realizado com suceso');
     }
 }

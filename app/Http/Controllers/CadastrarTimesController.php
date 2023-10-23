@@ -18,6 +18,6 @@ class CadastrarTimesController extends Controller
       // Crie um novo time no banco de dados
       Time::create($request->all());
     
-      return view('formularios.cadastrar-times');
+      return redirect()->route('cadastroTime.view')->with('success','Time cadastrado com sucesso.');
     }
 }

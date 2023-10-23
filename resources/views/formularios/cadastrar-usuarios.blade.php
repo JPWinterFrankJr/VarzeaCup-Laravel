@@ -2,6 +2,9 @@
 @stack('css')
 <link rel="stylesheet" href="/css/telas/cadastrar-usuario.css">
 @section('content')
+    @if( session('success'))
+        <p>{{ session('success')}}</p>
+    @endif
     <div class="container">
         <form action="{{ route('cadastroUsuario.cadastrar') }}" method="post" class="formulario">
             @csrf
