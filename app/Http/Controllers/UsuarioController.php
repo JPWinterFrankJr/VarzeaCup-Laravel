@@ -35,7 +35,7 @@ class UsuarioController extends Controller
             if ($usuario == True) {
                 $usuario->update($request->all());
                 return redirect()->route('usuarios')
-                    ->with('success', 'Usuarios atualizados com sucesso.');
+                    ->with('success', 'Usuario atualizado com sucesso.');
             } else {
                 return redirect()->back()->with('error', 'usuario não encontrado.');
             }

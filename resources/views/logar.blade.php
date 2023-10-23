@@ -3,6 +3,9 @@
 <link rel="stylesheet" href="/css/telas/logar.css">
 
 @section('content')
+@if( session('msg-logout'))
+    <p>{{ session('msg-logout')}}</p>
+@endif
     <div class="container">
         @if($errors->any())
             @foreach ($errors->all() as $error)

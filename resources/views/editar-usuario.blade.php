@@ -13,7 +13,6 @@
             <th>Salvar</th>
         </tr>
 
-
         @if ($results->count() > 0)
         @foreach ($results as $result)
 

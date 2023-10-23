@@ -17,7 +17,7 @@ class LogarController extends Controller
         // Tente autenticar o usuário
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             // A autenticação foi bem-sucedida
-            return redirect()->intended('cadastros'); // Redirecionar para a página de destino
+            return redirect()->intended('/')->with('msg','Usuario logado com sucesso'); // Redirecionar para a página de destino
         } else {
             // A autenticação falhou
             //ARRUMAR, MOSTRAR MENSAGEM DE NÃO LOGADO COM SUCESSO
@@ -28,6 +28,6 @@ class LogarController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-        return redirect('logar');
+        return redirect('logar')->with('msg-logout','Usuario desconectado');
     }
 }

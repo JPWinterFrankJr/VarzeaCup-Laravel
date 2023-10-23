@@ -16,7 +16,9 @@
             <th>Editar</th>
         </tr>
 
-
+    @if(session('success'))
+        <p>{{ session('success')}}</p>
+    @endif
         @if ($results->count() > 0)
         @foreach ($results as $result)
 
