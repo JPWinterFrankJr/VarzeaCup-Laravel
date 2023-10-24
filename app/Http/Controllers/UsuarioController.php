@@ -25,7 +25,7 @@ class UsuarioController extends Controller
     public function destroy(UsuariosPostRequest $request)
     {           
         User::find($request->id)->delete();
-        return redirect()->route('usuarios');
+        return redirect()->route('usuarios')->with('msg', 'Usuario excluido com sucesso');
     }
 
     public function update(UsuariosPostRequest $request)
