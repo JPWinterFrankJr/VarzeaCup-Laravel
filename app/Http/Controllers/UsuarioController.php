@@ -30,21 +30,24 @@ class UsuarioController extends Controller
 
     public function update(UsuariosPostRequest $request)
     {
-        $user = User::where('name', $request->name)->first();
-        $email = User::where('email', $request->email)->first();
-
         if ($request->has('salvar')) {
             $usuario = User::find($request->input('id'));
-            if ($usuario == True) {
-                if ($user and $email) {
-                    $usuario->update($request->all());
+            
+            if ($usuario) {
+                $data = $request->all();
+
+                // Verifica se os campos necessários não são nulos
+                if ($data['name'] !== null && $data['email'] !== null) {
+                    $usuario->update($data);
                     return redirect()->route('usuarios')
-                        ->with('success', 'Usuario atualizado com sucesso.');
+                        ->with('success', 'Usuário atualizado com sucesso.');
                 } else {
-                    return redirect()->route('viewEditarUsuario')->with('msg', 'Erro ao alterar dados. Os campos não podem ser nulos.');
+                    return redirect()->route('viewEditarUsuario')
+                        ->with('msg', 'Erro ao alterar dados. Os campos não podem ser nulos.');
                 }
             } else {
-                return redirect()->back()->with('error', 'usuario não encontrado.');
+                return redirect()->route('viewEditarUsuario')
+                    ->with('msg', 'Erro ao alterar dados. Usuário não encontrado.');
             }
         }
     }
