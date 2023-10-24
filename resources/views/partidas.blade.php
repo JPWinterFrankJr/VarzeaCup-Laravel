@@ -3,6 +3,9 @@
 <link rel="stylesheet" href="/css/telas/tela-partidas.css">
 
 @section('content')
+
+<h1>Lista de partidas</h1>
+
     @foreach ($results as $result)
         <div class='partida'>
             <form action="{{ route('editarpartida.deletarPartida') }}" method="post">

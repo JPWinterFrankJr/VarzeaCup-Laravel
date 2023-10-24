@@ -11,17 +11,18 @@ class ListarPartidasController extends Controller
 {
     public function show()
     {
-        
         $partidasModel = new Partida();
         $results = $partidasModel->listarPartidas();
         foreach ($results as $result) {
+            
             $result->ResultadoFinaltime1 = $result->time1_gols1 + $result->time1_gols2;
             $result->ResultadoFinaltime2 = $result->time2_gols1 + $result->time2_gols2;
         }
+            
+        return view('partidas', compact("results"));
 
-        return view('partidas', compact("result", "results"));
-        
     }
+    
 
     public function viewEditar(Request $request)
     {
