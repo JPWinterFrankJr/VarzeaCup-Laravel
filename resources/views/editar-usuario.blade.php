@@ -3,6 +3,10 @@
 <link rel="stylesheet" href="../css/telas/usuarios.css">
 @endpush
 @section('content')
+@if( session('msg'))
+    <p>{{ session('msg')}}</p>
+@endif
+
 <div class="container">
     <h1>Listagem de Usuários</h1>
     <table>

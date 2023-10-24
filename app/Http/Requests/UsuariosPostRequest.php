@@ -23,6 +23,8 @@ class UsuariosPostRequest extends FormRequest
     {
         return [
             'id'=>'required',
+            'name',
+            'email',
         ];
     }
 }
