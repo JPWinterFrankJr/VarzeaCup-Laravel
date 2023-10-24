@@ -4,6 +4,8 @@
 @section('content')
 @if( session('success'))
     <p>{{ session('success')}}</p>
+@elseif( session('erro'))
+    <p>{{ session('erro')}}</p>
 @endif
     <div class="container">
         <form action="{{ route('cadastroTime.cadastrar') }}" method="POST" class="formulario">
