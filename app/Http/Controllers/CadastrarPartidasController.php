@@ -18,10 +18,17 @@ class CadastrarPartidasController extends Controller
 
     public function create(CadastrarPartidasPostRequest $request)
     {
-        // Crie uma nova Partida no banco de dados
-        Partida::create($request->all());
-        $results = Time::all();
-        return redirect()->route('cadastroPartida.view', compact('results'))
-            ->with('success', 'Cadastro de partida realizado com suceso');
+        if($request->time1_gols1 < 0 or $request->time2_gols1<0
+            or $request->time1_gols2<0 or $request->time2_gols2 < 0){
+                return redirect()->route('cadastroPartida.view')
+                ->with('error', 'Erro, O valor dos gols não podem ser negativos');
+        }else{
+            // Crie uma nova Partida no banco de dados
+            Partida::create($request->all());
+            $results = Time::all();
+            return redirect()->route('cadastroPartida.view', compact('results'))
+                ->with('success', 'Cadastro de partida realizado com suceso');
+        }
+
     }
 }

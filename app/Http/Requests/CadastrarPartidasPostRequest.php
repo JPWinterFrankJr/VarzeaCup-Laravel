@@ -30,4 +30,5 @@ class CadastrarPartidasPostRequest extends FormRequest
             'time2_id'=> 'required',
         ];
     }
+
 }

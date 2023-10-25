@@ -5,6 +5,8 @@
 @section('content')
 @if ( session('success'))
     <p>{{ session('success')}}</p>
+@elseif( session('error'))
+    <p>{{ session('error')}}</p>
 @endif
     <form action="{{ route('cadastroPartida.cadastrar') }}" method="POST" class="formulario">
         @csrf
