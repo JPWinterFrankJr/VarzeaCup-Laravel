@@ -1,6 +1,7 @@
 @extends('navbar')
-@stack('css')
+@push('css')
 <link rel="stylesheet" href="/css/telas/cadastrar-partidas.css">
+@endpush
 
 @section('content')
 @if ( session('success'))
@@ -13,10 +14,10 @@
         <h1>Cadastrar partidas</h1>
         <label>Data das partidas</label><br>
         <label>Partida 1</label><br>
-        <input type="text" name="data_partida1" id="date1" placeholder="Partida 1" required>
+        <input type="text" name="data_partida1" class="datepicker" id="date1" placeholder="Partida 1" required>
         <br><br>
         <label>Partida 2</label><br>
-        <input type="text" name="data_partida2" id="date2" placeholder="Partida 2" required>
+        <input type="text" name="data_partida2" class="datepicker" id="date2" placeholder="Partida 2" required>
         <br><br>
 
         <!-- Selecionar times já cadastrados -->
@@ -62,9 +63,9 @@
 
     <script>
         $(function() {
-            $( "#date1" ).datepicker({
+            $( ".datepicker" ).datepicker({
                 showOn: "button",
-                buttonImage: "calendario.png",
+                buttonImage: "",//{{ asset('img/calendario.png') }}
                 changeMonth: true,
                 changeYear: true,
                 buttonImageOnly: true,
@@ -76,21 +77,7 @@
                 monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
             });
         });
-        $(function() {
-            $( "#date2" ).datepicker({
-                showOn: "button",
-                buttonImage: "calendario.png",
-                changeMonth: true,
-                changeYear: true,
-                buttonImageOnly: true,
-                dateFormat: 'dd/mm/yy',
-                dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'],
-                dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
-                dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
-                monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
-                monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
-            });
-        });
+
         //Pega o valor do input date e armazena numa variavel js 
         var data1 = document.getElementById('date1').value;
         var data2 = document.getElementById('date2').value;

@@ -10,6 +10,7 @@ use App\Http\Controllers\ClassificacaoController;
 use App\Http\Controllers\ListarPartidasController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TimesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,13 @@ Route::middleware(['auth'])->group(function () {
     Route::match(['get', 'post'], 'partidas/editar-partidas', [ListarPartidasController::class, 'ViewEditar'])->name('viewEditarPartidas');
     Route::post('partidas/editar-partidas/salvar-partida', [ListarPartidasController::class, 'salvar'])->name('salvarPartida');
     Route::match(['get', 'post'],'partidas/deletar', [ListarPartidasController::class, 'destroy'])->name('editarpartida.deletarPartida');
+
+    //EDITAR E EXCLUIR TIMES
+    Route::get('times', [TimesController::class, 'show']) ->name('times');
+    Route::match(['get', 'post'], 'times/editar', [TimesController::class, 'ViewEditar'])->name('viewEditarTimes');
+    Route::post('times/editar-times/salvar-time', [TimesController::class, 'update'])->name('times.EditarTimes');
+    Route::match(['get', 'post'],'times/deletar', [TimesController::class, 'destroy'])->name('deletarTime');
+
 
     //ROTAS CADASTROS
     Route::get('cadastros', [CadastroController::class, 'show'])->name('cadastro');

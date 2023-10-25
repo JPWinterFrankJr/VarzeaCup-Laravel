@@ -21,6 +21,7 @@
         @auth
         <a href="/cadastros">Cadastros</a>
         <a href="/usuarios">Usuarios</a>
+        <a href="/times">Times</a>
         <a href="/partidas">Partidas</a>
         <a href="/sair">Sair</a>
         <p id="mensagem">Bem-vindo, {{ Auth::user()->name }}!</p>

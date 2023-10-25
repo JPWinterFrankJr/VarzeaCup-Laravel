@@ -1,7 +1,7 @@
 @extends('navbar')
-@stack('css')
+@push('css')
 <link rel="stylesheet" href="/css/telas/classificacao.css">
-
+@endpush
 @section('content')
     <h1>Tabela de Classificação</h1>
 

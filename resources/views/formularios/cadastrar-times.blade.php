@@ -1,6 +1,7 @@
 @extends('navbar')
-@stack('css')
+@push('css')
 <link rel="stylesheet" href="/css/telas/cadastrar-times.css">
+@endpush
 @section('content')
 @if( session('success'))
     <p>{{ session('success')}}</p>

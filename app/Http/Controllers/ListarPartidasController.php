@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 
 class ListarPartidasController extends Controller
 {
-    public function show()
+    public function show(Partida $partidasModel)
     {
-        $partidasModel = new Partida();
+
         $results = $partidasModel->listarPartidas();
         foreach ($results as $result) {
             
@@ -43,7 +43,7 @@ class ListarPartidasController extends Controller
     {
         if ($request->has('Salvar')) {
             $partidas = Partida::find($request->input('partida_id'));
-            if ($partidas == True) {
+            if ($partidas) {
                 $partidas->update($request->all());
                 return redirect()->route('viewEditarPartidas')
                     ->with('success', 'Gols da Partida atualizados com sucesso.');

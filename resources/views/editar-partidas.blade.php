@@ -1,7 +1,7 @@
 @extends('navbar')
-@stack('css')
+@push('css')
 <link rel="stylesheet" href="/css/telas/editar-partidas.css">
-
+@endpush
 @section('content')
 @foreach ($results as $result)
     <div class='partida'>

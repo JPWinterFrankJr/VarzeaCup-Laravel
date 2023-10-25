@@ -1,7 +1,7 @@
 @extends('navbar')
-@stack('css')
+@push('css')
 <link rel="stylesheet" href="/css/telas/tela-partidas.css">
-
+@endpush
 @section('content')
 
 <h1>Lista de partidas</h1>

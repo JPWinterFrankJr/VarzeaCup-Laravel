@@ -1,5 +1,6 @@
 @extends('navbar')
-@stack('css')
+@push('css')
+@endpush
 <link rel="stylesheet" href="/css/telas/cadastros.css">
 @section('content')
     <div class="container">

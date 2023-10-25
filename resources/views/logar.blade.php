@@ -1,7 +1,7 @@
 @extends('navbar')
-@stack('css')
+@push('css')
 <link rel="stylesheet" href="/css/telas/logar.css">
-
+@endpush
 @section('content')
 @if( session('msg-logout'))
     <p>{{ session('msg-logout')}}</p>
